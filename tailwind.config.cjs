@@ -4,6 +4,9 @@ module.exports = {
   mode: 'jit',
   theme: {
     extend: {
+      zIndex: {
+        '1' : '1'
+      },
       colors: {
         warprime: '#F5E05A',
         warsecond: '#DB873d',
