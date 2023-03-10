@@ -1,9 +1,13 @@
 import React from 'react'
+import SideNav from './components/navBar'
+
 
 const App = () => {
   return (
-    <div className='bg-primary w-full overflow-hidden'>
-      <h1>RPG TO DO</h1>
+    <div className='App'>
+
+      <SideNav/>
+
     </div>
   )
 }

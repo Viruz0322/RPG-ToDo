@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sideNav {
+    height: 100%;
+    width: 250px;
+    background: gray;
+}
+
+.sideNavList {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+.sideNavList .row {
+    height: 70px;
+    width: 100%;
+    border: 1px solid black;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+}
+
+.sideNavList .row:hover{
+    cursor: pointer;
+    background-color: black;
+}
+
+.row #icon {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+}
+
+.row #title {
+    flex: 30%;
+}
