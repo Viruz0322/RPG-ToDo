@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.App {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sideNav {
+    height: 100%;
+    width: 250px;
+}
+
+.sideNavList {
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+}
+
+.sideNavList .row {
+    height: 70px;
+    width: 100%;
+    border: 3px solid rgb(91, 91, 91);
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+}
+
+.sideNavList .row:hover{
+    cursor: pointer;
+    background-color: rgb(91, 91, 91);
+    color: white;;
+}
+
+.row #icon {
+    flex: 25%;
+    display: grid;
+    place-items: center;
+}
+
+.row #title {
+    flex: 30%;
+    font-size: 35px;
+}
+
+
+/*WARRIOR */
+.sideNavList #Warrior {
+    background-color: #BA4F34;
+    color: #F5E05A;
+    border: 3px solid #7A184C;
+}
+
+.sideNavList #Warrior #icon {
+    color: #DB873D;
+}
+
+.sideNavList #Warrior:hover {
+    background-color: #7A184C;
+}
+
+/*Healer */
+.sideNavList #Healer {
+    background-color: #286875 ;
+    color: #9AE643 ;
+    border: 3px solid #2e3762
+}
+
+.sideNavList #Healer #icon {
+    color: #2b9268;
+}
+
+.sideNavList #Healer:hover {
+    background-color: #2e3762;
+}
+
+/*Scholar*/
+.sideNavList #Scholar {
+    background-color: #3E6294;
+    color: #79EAF2;
+    border: 3px solid #3F3966
+}
+
+.sideNavList #Scholar #icon {
+    color: #517ebd;
+}
+
+.sideNavList #Scholar:hover {
+    background-color: #3F3966;
+}
+
+
+
+
+ 
