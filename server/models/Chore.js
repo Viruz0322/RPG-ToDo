@@ -5,10 +5,10 @@ const choreSchema = new Schema({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    default: ""
-  },
+  // description: {
+  //   type: String,
+  //   default: ""
+  // },
   isComplete: {
     type: Boolean,
     default: false

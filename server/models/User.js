@@ -16,6 +16,6 @@ const userSchema = new Schema({
   scholarExp: Number
 });
 
-const Matchup = model('user', userSchema);
+const User = model('user', userSchema);
 
 module.exports = Matchup;

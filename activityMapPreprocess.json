@@ -1,0 +1,443 @@
+[
+    {
+      "class": "warrior",
+      "to-do item": "Go to the gym",
+      "easy": "30mins",
+      "med": "1hr",
+      "hard": "2hrs"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go swimming",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go on a run",
+      "easy": "1mi",
+      "med": "5mi",
+      "hard": "10mi"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go on a walk",
+      "easy": "15min",
+      "med": "30min",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go walk the dog",
+      "easy": "15min",
+      "med": "30min",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Play sports with the kids",
+      "easy": "15min",
+      "med": "30min",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go play tennis",
+      "easy": "30mins",
+      "med": "1hr",
+      "hard": "2hrs"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Do pushups",
+      "easy": 10,
+      "med": 25,
+      "hard": 40
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Do situps",
+      "easy": 10,
+      "med": 25,
+      "hard": 40
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Lift some at-home weights",
+      "easy": "15mins",
+      "med": "30mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Do some-pull ups",
+      "easy": 10,
+      "med": 25,
+      "hard": 40
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go on a hike",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Participate in a marathon",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Ride a bike",
+      "easy": "15mins",
+      "med": "30mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go to sleep on time",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Wake up and not check your phone immediately",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go to a kickboxing lesson",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Do some yoga",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Meditate",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "warrior",
+      "to-do item": "Go rock climbing",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "",
+      "to-do item": "",
+      "easy": "",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Do the laundry",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Do the dishes",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Sweep the floor",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Mop the floor",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Mow the lawn",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "healer",
+      "to-do item": "Wash your car",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Do your skincare routine",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Restock the fridge",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Restock your essentials around the house",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Meal prep for the week",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "healer",
+      "to-do item": "Cook breakfast",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Cook lunch",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Cook dinner",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Make a healthy snack",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Clean dirty mirrors",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Dust the surfaces around the house",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Wash the bedsheets and pillowcases",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Wash the towels",
+      "easy": "1pt",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "healer",
+      "to-do item": "Attend social events",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "healer",
+      "to-do item": "Call your loved ones",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "healer",
+      "to-do item": "Drink water",
+      "easy": "1gal",
+      "med": "2gals",
+      "hard": "3gals"
+    },
+    {
+      "class": "",
+      "to-do item": "",
+      "easy": "",
+      "med": "",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Study",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Read a book fictional",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Learn a new skill",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Think on how you can improve your worth at work",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research financial literacy",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Learn a new language",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Write a blog post",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Write a journal post about your day",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Read a book that improves your day-to-day life",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Watch/read a motivational speaker/book",
+      "easy": "20mins",
+      "med": "40mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research about a way to earn money outside of work",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Do a good deed",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Volunteer your time to those in need",
+      "easy": "15mins",
+      "med": "30mins",
+      "hard": "1hr"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research new hobbies",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research places you'd like to travel to",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Create a plan for the future",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research ways to cut expenses",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Research healthy foods to add into your diet",
+      "easy": "",
+      "med": "",
+      "hard": "3pts"
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Help your kid with their homework",
+      "easy": "",
+      "med": "2pts",
+      "hard": ""
+    },
+    {
+      "class": "scholar",
+      "to-do item": "Cut your screen time down",
+      "easy": "30mins",
+      "med": "1hr",
+      "hard": "2hrs"
+    }
+  ]
