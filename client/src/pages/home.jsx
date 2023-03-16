@@ -15,10 +15,10 @@ export default function Home() {
   const [todos, setTodos] = useState([]);
   const [diff, setDiff] = useState();
 
-  useEffect(() => console.log(todos), [todos]);
+  useEffect(( ) => console.log(todos), [todos]);
 
   return (
-    <div className="p-10 relative">
+    <div className="p-10 relative bg-slate-400 h-[100vh}">
       <h1 className="font-semibold text-3xl text-center">RPG TODO</h1>
       <div class="flex items-center justify-center mt-10">
         {addCustom ? (
@@ -34,7 +34,7 @@ export default function Home() {
                 className="input input-bordered w-full max-w-xs"
                 onChange={(e) => setInput(e.target.value)}
               />
-            </div>
+            </div> 
             <h1>Difficulty:</h1>
             <select
               onChange={(e) => setDiff(e.target.value)}
@@ -50,13 +50,13 @@ export default function Home() {
           </>
         ) : (
           <>
-            <h1>Please select what to do, {currentClass}</h1>
+            <h1>Start by selecting a class</h1>
             <select
               onChange={(e) => setTodos([...todos, JSON.parse(e.target.value)])}
-              className="select select-ghost w-full max-w-xs ml-3 mr-3"
+              className="select w-full max-w-xs ml-3 mr-3"
             >
               <option disabled selected>
-                Tasks
+                {currentClass} task
               </option>
               {filteredActivities.map((a) => {
                 return <option value={JSON.stringify(a)}>{a.item}</option>;
@@ -69,7 +69,11 @@ export default function Home() {
       {/* this section shows actual todos */}
       {/* TODO - style this ! */}
       {todos.map((t) => {
-        return <h1>{t.item}</h1>;
+        return (//<h1>{t.item}</h1>;
+        <label className="label cursor-pointer">
+          <span className="label-text">{t.item}</span> 
+          <input type="checkbox" checked className="checkbox" />
+        </label>)
       })}
       {/* this section shows actual todos */}
 
