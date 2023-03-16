@@ -32,6 +32,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'VT323', monospace;
+    background: white;
 }
 
 .sideNavList .row:hover{
