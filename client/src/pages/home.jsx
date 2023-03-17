@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useAtomValue } from "jotai";
 import { classAtom } from "../state";
 import { activities } from "../constants";
+import { addChore, getAllChores } from "../api";
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
@@ -14,8 +15,31 @@ export default function Home() {
   const [addCustom, setAddCustom] = useState(false);
   const [todos, setTodos] = useState([]);
   const [diff, setDiff] = useState();
+  const [selectedChore, setSelectedChore] = useState(null);
+  const [intensity, setIntensity] = useState(null);
 
-  useEffect(( ) => console.log(todos), [todos]);
+  //need to get all the todos
+  useEffect(() => {
+    const get = async () =>
+      await getAllChores().then((chores) => setTodos(chores || []));
+    get();
+  }, []);
+
+  const handleAddTodo = async () => {
+    const payload = {
+      name: selectedChore.item,
+      description: `${selectedChore.item} - ${intensity.amount}`,
+      weight: {
+        [selectedChore.class]: intensity.pt,
+      },
+    };
+
+    console.log(payload);
+    ///first create on BE, then update state
+    const res = await addChore(payload);
+    if (res) setTodos([...todos, payload]);
+  };
+
 
   return (
     <div className="p-10 relative bg-slate-400 h-[100vh}">
@@ -52,7 +76,11 @@ export default function Home() {
           <>
             <h1>Start by selecting a class</h1>
             <select
-              onChange={(e) => setTodos([...todos, JSON.parse(e.target.value)])}
+              onChange={(e) => {
+                setSelectedChore(JSON.parse(e.target.value));
+                setIntensity(null);
+              }}
+
               className="select w-full max-w-xs ml-3 mr-3"
             >
               <option disabled selected>
@@ -62,6 +90,53 @@ export default function Home() {
                 return <option value={JSON.stringify(a)}>{a.item}</option>;
               })}
             </select>
+            {selectedChore && (
+              <>
+                <h1>Select Intensity</h1>
+                <select
+                  onChange={(e) => setIntensity(JSON.parse(e.target.value))}
+                >
+                  <option disabled selected>
+                    {selectedChore.item}
+                  </option>
+                  {selectedChore.easy && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 1,
+                        amount: selectedChore.easy,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.easy}
+                    </option>
+                  )}
+                  {selectedChore.med && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 2,
+                        amount: selectedChore.med,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.med}
+                    </option>
+                  )}
+                  {selectedChore.hard && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 3,
+                        amount: selectedChore.hard,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.hard}
+                    </option>
+                  )}
+                </select>
+                {selectedChore && intensity && (
+                  <button onClick={handleAddTodo} className="btn btn-sm ml-8">
+                    Add
+                  </button>
+                )}
+              </>
+            )}
           </>
         )}
       </div>
@@ -69,11 +144,19 @@ export default function Home() {
       {/* this section shows actual todos */}
       {/* TODO - style this ! */}
       {todos.map((t) => {
-        return (//<h1>{t.item}</h1>;
-        <label className="label cursor-pointer">
-          <span className="label-text">{t.item}</span> 
-          <input type="checkbox" checked className="checkbox" />
-        </label>)
+        return (
+          //<h1>{t.item}</h1>;
+          <label className="label cursor-pointer">
+            <span className="label-text">{t.item}</span>
+            <span>{t.description}</span>
+            <input
+              type="checkbox"
+              checked={t.isComplete}
+              className="checkbox"
+            />
+          </label>
+        );
+
       })}
       {/* this section shows actual todos */}
 
