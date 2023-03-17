@@ -1,21 +1,21 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
   username: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   chores: [Schema.Types.ObjectId],
   rewards: [Schema.Types.ObjectId],
   warriorExp: Number,
   healerExp: Number,
-  scholarExp: Number
+  scholarExp: Number,
 });
 
-const User = model('user', userSchema);
+const User = model("user", userSchema);
 
-module.exports = Matchup;
+module.exports = User;
