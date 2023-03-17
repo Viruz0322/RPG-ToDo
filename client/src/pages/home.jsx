@@ -40,6 +40,7 @@ export default function Home() {
     if (res) setTodos([...todos, payload]);
   };
 
+
   return (
     <div className="p-10 relative bg-slate-400 h-[100vh}">
       <h1 className="font-semibold text-3xl text-center">RPG TODO</h1>
@@ -57,7 +58,7 @@ export default function Home() {
                 className="input input-bordered w-full max-w-xs"
                 onChange={(e) => setInput(e.target.value)}
               />
-            </div>
+            </div> 
             <h1>Difficulty:</h1>
             <select
               onChange={(e) => setDiff(e.target.value)}
@@ -79,6 +80,7 @@ export default function Home() {
                 setSelectedChore(JSON.parse(e.target.value));
                 setIntensity(null);
               }}
+
               className="select w-full max-w-xs ml-3 mr-3"
             >
               <option disabled selected>
@@ -154,6 +156,7 @@ export default function Home() {
             />
           </label>
         );
+
       })}
       {/* this section shows actual todos */}
 

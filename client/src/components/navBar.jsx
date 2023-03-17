@@ -8,7 +8,7 @@ export default function SideBar() {
   const setCurrentClass = useSetAtom(classAtom);
   return (
     <>
-      <div className="sideNav h-[100vh] w-1/5 bg-slate-100">
+      <div className="sideNav h-[100vh] w-1/5 bg-gray-700">
         <ul className="sideNavList">
           {navBarData.map((val, key) => {
             return (
