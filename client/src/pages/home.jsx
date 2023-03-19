@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useAtomValue } from "jotai";
 import { classAtom } from "../state";
 import { activities } from "../constants";
-import { addChore, getAllChores } from "../api";
+import { addChore, getAllChores, deleteChore } from "../api/index";
 import { Link } from "react-router-dom";
 import { getToken } from "../auth";
 
@@ -30,7 +30,6 @@ function NavigationLinks() {
     </nav>
   );
 }
-import { addChore, getAllChores , deleteChore } from "../api";
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
