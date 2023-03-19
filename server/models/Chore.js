@@ -9,13 +9,6 @@ const choreSchema = new Schema({
     type: String,
     default: ""
   },
-  isComplete: {
-    type: Boolean,
-    default: false
-  description: {
-    type: String,
-    default: ""
-  },
   //isComplete: {
   //type: Boolean,
   //default: false

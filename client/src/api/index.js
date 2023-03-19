@@ -23,7 +23,7 @@ export const getAllChores = async () => {
     const res = await fetch("/api/chore");
     const data = await res.json();
     if (data.success) {
-      return data.data;
+      return data.data
     }
     return false;
   } catch (err) {
@@ -33,3 +33,18 @@ export const getAllChores = async () => {
 };
 
 export const anotherOne = async () => null; // some kind of fetch call similar to above
+
+
+export const deleteChore = async(id)=> {
+  try{
+    const res = await fetch("/api/chore/"+id);
+    const data = await res.json()
+    if (data.success) {
+      return data.data
+    }
+    return false;
+  } catch (err) {
+    console.log("ERROR getting chores", error);
+    return false;
+  }
+};
