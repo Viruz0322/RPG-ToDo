@@ -37,7 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Router>
       <div className="flex">
         <SideBar />
-        <main className="w-4/5">
+        <main className="w-4/5 ">
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
