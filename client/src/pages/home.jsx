@@ -30,6 +30,7 @@ function NavigationLinks() {
     </nav>
   );
 }
+import { addChore, getAllChores , deleteChore } from "../api";
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
@@ -59,6 +60,7 @@ export default function Home() {
       weight: {
         [selectedChore.class]: intensity.pt,
       },
+      isDone: false
     };
 
     console.log(payload);
@@ -67,8 +69,19 @@ export default function Home() {
     if (res) setTodos([...todos, payload]);
   };
 
+
+  async function handleDeleteTodo(item) {
+    console.log(item);
+    const itemId = item._id
+    const res = await deleteChore(itemId);
+    location.reload()
+    //const activeTodos = [...todos].filter((todo) => todo.item !== item);
+    //console.log(res, activeTodos);
+    //setTodos(activeTodos);
+  }
+
   return (
-    <div className="p-10 relative bg-slate-400 h-[100vh]">
+    <div className="p-10 relative bg-slate-400 h-[100vh} opacity-95">
       <h1 className="font-semibold text-3xl text-center">RPG TODO</h1>
       <NavigationLinks />
       <div className="flex items-center justify-center mt-10">
@@ -177,8 +190,8 @@ export default function Home() {
             <span>{t.description}</span>
             <input
               type="checkbox"
-              checked={t.isComplete}
-              className="checkbox"
+              onClick={() => handleDeleteTodo(t)}
+              className="checkbox"   
             />
           </label>
         );

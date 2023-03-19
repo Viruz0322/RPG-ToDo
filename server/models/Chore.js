@@ -9,10 +9,10 @@ const choreSchema = new Schema({
     type: String,
     default: ""
   },
-  isComplete: {
-    type: Boolean,
-    default: false
-  },
+  //isComplete: {
+  //type: Boolean,
+  //default: false
+  //},
   weight: {
     warrior: Number,
     healer: Number,
