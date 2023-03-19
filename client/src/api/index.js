@@ -13,7 +13,7 @@ export const addChore = async (todo) => {
     }
     return false;
   } catch (err) {
-    console.log("ERROR adding task", error);
+    console.log("ERROR adding task", err);
     return false;
   }
 };
@@ -23,11 +23,11 @@ export const getAllChores = async () => {
     const res = await fetch("/api/chore");
     const data = await res.json();
     if (data.success) {
-      return data.data
+      return data.data;
     }
     return false;
   } catch (err) {
-    console.log("ERROR getting chores", error);
+    console.log("ERROR getting chores", err);
     return false;
   }
 };

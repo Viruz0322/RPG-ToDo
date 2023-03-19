@@ -3,6 +3,33 @@ import { useAtomValue } from "jotai";
 import { classAtom } from "../state";
 import { activities } from "../constants";
 import { addChore, getAllChores } from "../api";
+import { Link } from "react-router-dom";
+import { getToken } from "../auth";
+
+function NavigationLinks() {
+  const isAuthenticated = !!getToken();
+
+  return (
+    <nav>
+      <ul>
+        {isAuthenticated ? (
+          <li>
+            <Link to="/logout">Logout</Link>
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+          </>
+        )}
+      </ul>
+    </nav>
+  );
+}
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
@@ -40,11 +67,11 @@ export default function Home() {
     if (res) setTodos([...todos, payload]);
   };
 
-
   return (
-    <div className="p-10 relative bg-slate-400 h-[100vh}">
+    <div className="p-10 relative bg-slate-400 h-[100vh]">
       <h1 className="font-semibold text-3xl text-center">RPG TODO</h1>
-      <div class="flex items-center justify-center mt-10">
+      <NavigationLinks />
+      <div className="flex items-center justify-center mt-10">
         {addCustom ? (
           <>
             <h1>or Create your own:</h1>
@@ -58,7 +85,7 @@ export default function Home() {
                 className="input input-bordered w-full max-w-xs"
                 onChange={(e) => setInput(e.target.value)}
               />
-            </div> 
+            </div>
             <h1>Difficulty:</h1>
             <select
               onChange={(e) => setDiff(e.target.value)}
@@ -68,7 +95,7 @@ export default function Home() {
               <option value="medium">Medium(2pts)</option>
               <option value="hard">Hard(3pts)</option>
             </select>
-            <button class="border-2 border-transparent rounded-md p-1 bg-teal-200">
+            <button className="border-2 border-transparent rounded-md p-1 bg-teal-200">
               Add
             </button>
           </>
@@ -80,7 +107,6 @@ export default function Home() {
                 setSelectedChore(JSON.parse(e.target.value));
                 setIntensity(null);
               }}
-
               className="select w-full max-w-xs ml-3 mr-3"
             >
               <option disabled selected>
@@ -156,10 +182,10 @@ export default function Home() {
             />
           </label>
         );
-
       })}
       {/* this section shows actual todos */}
 
+      {/* BUTTON FOR ADDING CUSTOM */}
       <button
         onClick={() => setAddCustom((c) => !c)}
         className="btn btn-circle btn-outline fixed bottom-4 right-4 shadow-lg"

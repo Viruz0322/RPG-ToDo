@@ -7,20 +7,20 @@ router.post("/", async (req, res) => {
     console.log("db res", dbRes);
     res.json({ success: true });
   } catch (err) {
-    console.log("EERROR creating chore", err);
-    res.json({ success: false });
+    console.log("ERROR creating chore", err);
+    res.status(500).json({ success: false });
   }
 });
 
 router.get("/", async (req, res) => {
-    try {
-      const dbRes = await Chore.find();
-      console.log("db res", dbRes);
-      res.json({ success: true, data:dbRes });
-    } catch (err) {
-      console.log("EERROR creating chore", err);
-      res.json({ success: false });
-    }
-  });
+  try {
+    const dbRes = await Chore.find();
+    console.log("db res", dbRes);
+    res.json({ success: true, data: dbRes });
+  } catch (err) {
+    console.log("ERROR getting chores", err);
+    res.status(500).json({ success: false });
+  }
+});
 
 module.exports = router;
