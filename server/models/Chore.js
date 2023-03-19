@@ -12,7 +12,14 @@ const choreSchema = new Schema({
   isComplete: {
     type: Boolean,
     default: false
+  description: {
+    type: String,
+    default: ""
   },
+  //isComplete: {
+  //type: Boolean,
+  //default: false
+  //},
   weight: {
     warrior: Number,
     healer: Number,
