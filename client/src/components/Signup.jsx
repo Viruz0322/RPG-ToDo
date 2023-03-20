@@ -10,7 +10,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/signup', { username, password });
+      await axios.post('http://localhost:3001/api/signup', { username, password });
       navigate('/login');
     } catch (error) {
       console.error('Error signing up:', error);
