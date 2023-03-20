@@ -18,27 +18,33 @@ console.log('Secret key:', secretKey);
 const jwtSecret = secretKey; 
 
 router.post("/signup", async (req, res) => {
+  console.log("Signup request received:", req.body);
   try {
     const { username, password } = req.body;
 
     const existingUser = await User.findOne({ username });
 
     if (existingUser) {
+      console.log("Username already exists.");
       return res.status(400).json({ message: "Username already exists." });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({ username, password: hashedPassword });
-    await newUser.save();
+    const savedUser = await newUser.save();
+
+    console.log("User created and saved:", savedUser);
 
     res.json({ success: true });
   } catch (err) {
+    console.error("Error during signup:", err);
     res.status(500).json({ success: false, message: "Server error" });
   }
 });
 
 router.post("/login", async (req, res) => {
+  console.log("Login request received:", req.body);
   try {
     const { username, password } = req.body;
 
