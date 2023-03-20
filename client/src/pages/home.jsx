@@ -188,7 +188,7 @@ export default function Home() {
       {todos.map((t) => {
         return (
           //<h1>{t.item}</h1>;
-          <label className="label cursor-pointer">
+          <label key={t._id} className="label cursor-pointer">
             <span className="label-text">{t.item}</span>
             <span>{t.description}</span>
             <input
