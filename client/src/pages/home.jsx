@@ -119,65 +119,63 @@ export default function Home() {
           </>
         ) : (
           <>
-            <h1>Start by selecting a class</h1>
-            <select
-              onChange={(e) => {
-                setSelectedChore(JSON.parse(e.target.value));
-                setIntensity(null);
-              }}
-              className="select w-full max-w-xs ml-3 mr-3"
-            >
-              <option disabled selected>
-                {currentClass} task
-              </option>
-              {filteredActivities.map((a) => {
-                return <option key={a.item} value={JSON.stringify(a)}>{a.item}</option>;
+    <h1>Start by selecting a class</h1>
+    <select
+      value={selectedChore ? JSON.stringify(selectedChore) : ""}
+      onChange={(e) => {
+        setSelectedChore(JSON.parse(e.target.value));
+        setIntensity(null);
+      }}
+      className="select w-full max-w-xs ml-3 mr-3"
+    >
+      <option disabled>{currentClass} task</option>
+      {filteredActivities.map((a) => {
+        return <option key={a.item} value={JSON.stringify(a)}>{a.item}</option>;
+      })}
+    </select>
+    {selectedChore && (
+      <>
+        <h1>Select Intensity</h1>
+        <select
+          value={intensity ? JSON.stringify(intensity) : ""}
+          onChange={(e) => setIntensity(JSON.parse(e.target.value))}
+        >
+          <option disabled>{selectedChore.item}</option>
+          {selectedChore.easy && (
+            <option
+              value={JSON.stringify({
+                pt: 1,
+                amount: selectedChore.easy,
               })}
-            </select>
-            {selectedChore && (
-              <>
-                <h1>Select Intensity</h1>
-                <select
-                  onChange={(e) => setIntensity(JSON.parse(e.target.value))}
-                >
-                  <option disabled selected>
-                    {selectedChore.item}
-                  </option>
-                  {selectedChore.easy && (
-                    <option
-                      value={JSON.stringify({
-                        pt: 1,
-                        amount: selectedChore.easy,
-                      })}
-                    >
-                      {selectedChore.item} {selectedChore.easy}
-                    </option>
-                  )}
-                  {selectedChore.med && (
-                    <option
-                      value={JSON.stringify({
-                        pt: 2,
-                        amount: selectedChore.med,
-                      })}
-                    >
-                      {selectedChore.item} {selectedChore.med}
-                    </option>
-                  )}
-                  {selectedChore.hard && (
-                    <option
-                      value={JSON.stringify({
-                        pt: 3,
-                        amount: selectedChore.hard,
-                      })}
-                    >
-                      {selectedChore.item} {selectedChore.hard}
-                    </option>
-                  )}
-                </select>
-                {selectedChore && intensity && (
-                  <button onClick={handleAddTodo} className="btn btn-sm ml-8">
-                    Add
-                  </button>
+            >
+              {selectedChore.item} {selectedChore.easy}
+            </option>
+          )}
+          {selectedChore.med && (
+            <option
+              value={JSON.stringify({
+                pt: 2,
+                amount: selectedChore.med,
+              })}
+            >
+              {selectedChore.item} {selectedChore.med}
+            </option>
+          )}
+          {selectedChore.hard && (
+            <option
+              value={JSON.stringify({
+                pt: 3,
+                amount: selectedChore.hard,
+              })}
+            >
+              {selectedChore.item} {selectedChore.hard}
+            </option>
+          )}
+        </select>
+        {selectedChore && intensity && (
+          <button onClick={handleAddTodo} className="btn btn-sm ml-8">
+            Add
+          </button>
                 )}
               </>
             )}
