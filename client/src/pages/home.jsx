@@ -4,15 +4,15 @@ import { classAtom } from "../state";
 import { activities } from "../constants";
 import { addChore, getAllChores, deleteChore } from "../api/index";
 import { useNavigate, Link } from "react-router-dom";
-import { getToken } from "../auth";
+import { getToken, removeToken } from "../auth";
 
 function NavigationLinks() {
   const navigate = useNavigate();
   const isAuthenticated = !!getToken();
 
   const handleLogout = () => {
-    logout();
-    navigate('/login');
+    removeToken();
+    navigate("/login");
   };
 
   return (
