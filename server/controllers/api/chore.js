@@ -7,8 +7,8 @@ router.post("/", async (req, res) => {
     console.log("db res", dbRes);
     res.json({ success: true });
   } catch (err) {
-    console.log("EERROR creating chore", err);
-    res.json({ success: false });
+    console.log("ERROR creating chore", err);
+    res.status(500).json({ success: false });
   }
 });
 
