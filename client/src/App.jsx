@@ -12,7 +12,7 @@ function App() {
         <SideBar />
         <main className="w-4/5">
           <Routes>
-            <Route path="/" element={<Home />} exact />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/signup" element={<Signup />} />

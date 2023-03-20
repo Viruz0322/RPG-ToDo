@@ -4,10 +4,11 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
   chores: [Schema.Types.ObjectId],
   rewards: [Schema.Types.ObjectId],

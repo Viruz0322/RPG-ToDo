@@ -3,18 +3,24 @@ import { useAtomValue } from "jotai";
 import { classAtom } from "../state";
 import { activities } from "../constants";
 import { addChore, getAllChores, deleteChore } from "../api/index";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getToken } from "../auth";
 
 function NavigationLinks() {
+  const navigate = useNavigate();
   const isAuthenticated = !!getToken();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/login');
+  };
 
   return (
     <nav>
       <ul>
         {isAuthenticated ? (
           <li>
-            <Link to="/logout">Logout</Link>
+            <button onClick={handleLogout}>Logout</button>
           </li>
         ) : (
           <>
@@ -125,7 +131,7 @@ export default function Home() {
                 {currentClass} task
               </option>
               {filteredActivities.map((a) => {
-                return <option value={JSON.stringify(a)}>{a.item}</option>;
+                return <option key={a.item} value={JSON.stringify(a)}>{a.item}</option>;
               })}
             </select>
             {selectedChore && (
