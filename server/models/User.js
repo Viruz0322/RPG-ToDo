@@ -4,14 +4,13 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
-  chores: 
-  [{type: Schema.Types.ObjectId, ref:"chore"}],
+  chores: [{ type: Schema.Types.ObjectId, ref: "chore" }],
   // [Schema.Types.ObjectId],
   rewards: [Schema.Types.ObjectId],
   warriorExp: Number,

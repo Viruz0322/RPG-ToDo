@@ -1,16 +1,16 @@
-import { setToken, removeToken } from '../auth.js';
+import { setToken, getToken, removeToken } from "../auth.js";
 
 export async function login(username, password) {
-  const response = await fetch('/api/auth/login', {
-    method: 'POST',
+  const response = await fetch("/api/auth/login", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ username, password }),
   });
 
   if (!response.ok) {
-    throw new Error('Invalid username or password');
+    throw new Error("Invalid username or password");
   }
 
   const data = await response.json();
@@ -19,16 +19,16 @@ export async function login(username, password) {
 }
 
 export async function signup(username, password) {
-  const response = await fetch('/api/auth/signup', {
-    method: 'POST',
+  const response = await fetch("/api/auth/signup", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({ username, password }),
   });
 
   if (!response.ok) {
-    throw new Error('Failed to create user');
+    throw new Error("Failed to create user");
   }
 
   return await response.json();
@@ -47,7 +47,7 @@ export const addChore = async (todo, user) => {
       },
       body: JSON.stringify({
         todo,
-        user
+        user,
       }),
     });
     const data = await res.json();
@@ -63,7 +63,12 @@ export const addChore = async (todo, user) => {
 
 export const getAllChores = async () => {
   try {
-    const res = await fetch("/api/chore");
+    const token = getToken();
+    const res = await fetch("/api/chore", {
+      headers: {
+        token,
+      },
+    });
     const data = await res.json();
     if (data.success) {
       return data.data;
@@ -77,13 +82,12 @@ export const getAllChores = async () => {
 
 export const anotherOne = async () => null; // some kind of fetch call similar to above
 
-
-export const deleteChore = async(id)=> {
-  try{
-    const res = await fetch("/api/chore/"+id);
-    const data = await res.json()
+export const deleteChore = async (id) => {
+  try {
+    const res = await fetch("/api/chore/" + id);
+    const data = await res.json();
     if (data.success) {
-      return data.data
+      return data.data;
     }
     return false;
   } catch (err) {
