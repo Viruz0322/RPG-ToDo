@@ -50,6 +50,7 @@ export default function Home() {
   const [diff, setDiff] = useState();
   const [selectedChore, setSelectedChore] = useState(null);
   const [intensity, setIntensity] = useState(null);
+  const [customTaskName, setCustomTaskName] = useState("");
 
   //need to get all the todos
   useEffect(() => {
@@ -70,10 +71,23 @@ export default function Home() {
     };
 
     const token = getToken();
-    console.log(payload);
-    ///first create on BE, then update state
     const res = await addChore(payload, token);
-    console.log("token", token);
+    if (res) setTodos([...todos, payload]);
+  };
+
+  const handleAddCustomTask = async () => {
+    if (!customTaskName || !diff) return;
+    const payload = {
+      name: customTaskName,
+      description: `${customTaskName} - ${diff}`,
+      weight: {
+        [currentClass]: diff === "easy" ? 1 : diff === "medium" ? 2 : 3,
+      },
+      isDone: false,
+    };
+
+    const token = getToken();
+    const res = await addChore(payload, token);
     if (res) setTodos([...todos, payload]);
   };
 
@@ -116,21 +130,22 @@ export default function Home() {
                 type="text"
                 placeholder="Type here"
                 className="input input-bordered w-full max-w-xs"
-                onChange={(e) => setInput(e.target.value)}
+                onChange={(e) => setCustomTaskName(e.target.value)}
               />
             </div>
             <h1>Difficulty:</h1>
             <select
-              onChange={(e) => setDiff(e.target.value)}
-              className="select select-ghost max-w-xs"
+              value={diff}
+              onChange={(e) => {
+                setDiff(e.target.value);
+              }}
             >
-              <option value="easy">Easy(1pt)</option>
-              <option value="medium">Medium(2pts)</option>
-              <option value="hard">Hard(3pts)</option>
+              <option value="">Select difficulty</option>
+              <option value="easy">Easy 1pt</option>
+              <option value="medium">Medium 2pts</option>
+              <option value="hard">Hard 3pts</option>
             </select>
-            <button className="border-2 border-transparent rounded-md p-1 bg-teal-200">
-              Add
-            </button>
+            <button onClick={handleAddCustomTask} className="border-2 border-transparent rounded-md p-1 bg-teal-200 ml-3">Add Custom Task</button>
           </>
         ) : (
           <>
