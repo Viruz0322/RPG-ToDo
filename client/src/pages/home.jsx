@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { useAtomValue } from "jotai";
-import { classAtom } from "../state";
+import { useAtomValue, useAtom } from "jotai";
+import { classAtom, userAtom } from "../state";
 import { activities } from "../constants";
 import { addChore, getAllChores, deleteChore } from "../api/index";
 import { useNavigate, Link } from "react-router-dom";
@@ -39,6 +39,7 @@ function NavigationLinks() {
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
+  const [user] = useAtom(userAtom);
   const filteredActivities = useMemo(() => {
     if (!currentClass) return activities;
     return activities.filter(
@@ -59,7 +60,7 @@ export default function Home() {
     get();
   }, []);
 
-  const handleAddTodo = async () => {
+  const handleAddTodo = async (todo) => {
     if (!selectedChore || !intensity) return;
     const payload = {
       name: selectedChore.item,
@@ -145,7 +146,12 @@ export default function Home() {
               <option value="medium">Medium 2pts</option>
               <option value="hard">Hard 3pts</option>
             </select>
-            <button onClick={handleAddCustomTask} className="border-2 border-transparent rounded-md p-1 bg-teal-200 ml-3">Add Custom Task</button>
+            <button
+              onClick={handleAddCustomTask}
+              className="border-2 border-transparent rounded-md p-1 bg-teal-200 ml-3"
+            >
+              Add Custom Task
+            </button>
           </>
         ) : (
           <>
