@@ -68,9 +68,11 @@ export default function Home() {
       isDone: false
     };
 
+    const token = getToken();
     console.log(payload);
     ///first create on BE, then update state
-    const res = await addChore(payload);
+    const res = await addChore(payload, token);
+    console.log('token', token);
     if (res) setTodos([...todos, payload]);
   };
 

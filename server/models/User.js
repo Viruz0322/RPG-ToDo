@@ -10,7 +10,9 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  chores: [Schema.Types.ObjectId],
+  chores: 
+  [{type: Schema.Types.ObjectId, ref:"chore"}],
+  // [Schema.Types.ObjectId],
   rewards: [Schema.Types.ObjectId],
   warriorExp: Number,
   healerExp: Number,
