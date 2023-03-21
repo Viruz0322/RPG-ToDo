@@ -60,7 +60,7 @@ export default function Home() {
     get();
   }, []);
 
-  const handleAddTodo = async (todo) => {
+  const handleAddTodo = async () => {
     if (!selectedChore || !intensity) return;
     const payload = {
       name: selectedChore.item,
