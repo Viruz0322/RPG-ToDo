@@ -25,9 +25,9 @@ export const navBarData = [
     link: 'scholar'
   },
 
-  {
-    title: 'Sign Out',
-    icon: <LogoutIcon/>,
-    link: 'sign-out'
-  },
+//  {
+//    title: 'Sign Out',
+//    icon: <LogoutIcon/>,
+//    link: 'sign-out'
+//  },
 ]

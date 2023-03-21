@@ -87,7 +87,7 @@ export default function Home() {
 
   return (
     <div className="p-10 relative bg-slate-400 h-[100vh} opacity-95">
-      <h1 className="font-semibold text-3xl text-center">RPG TODO</h1>
+      <h1 className="font-semibold text-3xl text-center">Ameliorate Task Board</h1>
       <NavigationLinks />
       <div className="flex items-center justify-center mt-10">
         {addCustom ? (
