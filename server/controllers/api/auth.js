@@ -49,13 +49,13 @@ router.post("/login", async (req, res) => {
     const { username, password } = req.body;
 
     const user = await User.findOne({ username });
-
+    console.log("isuservalid",user)
     if (!user) {
       return res.status(401).json({ message: "Invalid username or password." });
     }
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
-
+    console.log("is password valid",isPasswordValid)
     if (!isPasswordValid) {
       return res.status(401).json({ message: "Invalid username or password." });
     }
@@ -65,6 +65,7 @@ router.post("/login", async (req, res) => {
     res.json({ success: true, token });
   } catch (err) {
     res.status(500).json({ success: false, message: "Server error" });
+    console.log("Error", err);
   }
 });
 
