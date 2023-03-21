@@ -1,8 +1,7 @@
 import ShieldIcon from '@mui/icons-material/Shield';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import SchoolIcon from '@mui/icons-material/School';
-import LogoutIcon from '@mui/icons-material/Logout';
-import Warrior from './Warrior';
+
 
 
 //add unique classnames or id to array
@@ -25,9 +24,4 @@ export const navBarData = [
     link: 'scholar'
   },
 
-//  {
-//    title: 'Sign Out',
-//    icon: <LogoutIcon/>,
-//    link: 'sign-out'
-//  },
 ]
