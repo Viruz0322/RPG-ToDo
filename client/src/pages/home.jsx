@@ -59,29 +59,40 @@ export default function Home() {
   }, []);
 
   const handleAddTodo = async () => {
+    if (!selectedChore || !intensity) return;
     const payload = {
       name: selectedChore.item,
       description: `${selectedChore.item} - ${intensity.amount}`,
       weight: {
         [selectedChore.class]: intensity.pt,
       },
-      isDone: false
+      isDone: false,
     };
 
     const token = getToken();
     console.log(payload);
     ///first create on BE, then update state
     const res = await addChore(payload, token);
-    console.log('token', token);
+    console.log("token", token);
     if (res) setTodos([...todos, payload]);
   };
 
+  useEffect(() => {
+    if (selectedChore) {
+      const defaultIntensity = selectedChore.easy
+        ? { pt: 1, amount: selectedChore.easy }
+        : selectedChore.med
+        ? { pt: 2, amount: selectedChore.med }
+        : { pt: 3, amount: selectedChore.hard };
+      setIntensity(defaultIntensity);
+    }
+  }, [selectedChore]);
 
   async function handleDeleteTodo(item) {
     console.log(item);
-    const itemId = item._id
+    const itemId = item._id;
     const res = await deleteChore(itemId);
-    location.reload()
+    location.reload();
     //const activeTodos = [...todos].filter((todo) => todo.item !== item);
     //console.log(res, activeTodos);
     //setTodos(activeTodos);
@@ -89,7 +100,9 @@ export default function Home() {
 
   return (
     <div className="p-10 relative bg-slate-400 h-[100vh} opacity-95">
-      <h1 className="font-semibold text-3xl text-center">Ameliorate Task Board</h1>
+      <h1 className="font-semibold text-3xl text-center">
+        Ameliorate Task Board
+      </h1>
       <NavigationLinks />
       <div className="flex items-center justify-center mt-10">
         {addCustom ? (
@@ -121,63 +134,67 @@ export default function Home() {
           </>
         ) : (
           <>
-    <h1>Start by selecting a class</h1>
-    <select
-      value={selectedChore ? JSON.stringify(selectedChore) : ""}
-      onChange={(e) => {
-        setSelectedChore(JSON.parse(e.target.value));
-        setIntensity(null);
-      }}
-      className="select w-full max-w-xs ml-3 mr-3"
-    >
-      <option disabled>{currentClass} task</option>
-      {filteredActivities.map((a) => {
-        return <option key={a.item} value={JSON.stringify(a)}>{a.item}</option>;
-      })}
-    </select>
-    {selectedChore && (
-      <>
-        <h1>Select Intensity</h1>
-        <select
-          value={intensity ? JSON.stringify(intensity) : ""}
-          onChange={(e) => setIntensity(JSON.parse(e.target.value))}
-        >
-          <option disabled>{selectedChore.item}</option>
-          {selectedChore.easy && (
-            <option
-              value={JSON.stringify({
-                pt: 1,
-                amount: selectedChore.easy,
-              })}
+            <h1>Start by selecting a class</h1>
+            <select
+              value={selectedChore ? JSON.stringify(selectedChore) : ""}
+              onChange={(e) => {
+                setSelectedChore(JSON.parse(e.target.value));
+                setIntensity(null);
+              }}
+              className="select w-full max-w-xs ml-3 mr-3"
             >
-              {selectedChore.item} {selectedChore.easy}
-            </option>
-          )}
-          {selectedChore.med && (
-            <option
-              value={JSON.stringify({
-                pt: 2,
-                amount: selectedChore.med,
+              <option disabled>{currentClass} task</option>
+              {filteredActivities.map((a) => {
+                return (
+                  <option key={a.item} value={JSON.stringify(a)}>
+                    {a.item}
+                  </option>
+                );
               })}
-            >
-              {selectedChore.item} {selectedChore.med}
-            </option>
-          )}
-          {selectedChore.hard && (
-            <option
-              value={JSON.stringify({
-                pt: 3,
-                amount: selectedChore.hard,
-              })}
-            >
-              {selectedChore.item} {selectedChore.hard}
-            </option>
-          )}
-        </select>
-        {selectedChore && intensity && (
-          <button onClick={handleAddTodo} className="btn btn-sm ml-8">
-            Add
-          </button>
+            </select>
+            {selectedChore && (
+              <>
+                <h1>Select Intensity</h1>
+                <select
+                  value={intensity ? JSON.stringify(intensity) : ""}
+                  onChange={(e) => setIntensity(JSON.parse(e.target.value))}
+                >
+                  <option disabled>{selectedChore.item}</option>
+                  {selectedChore.easy && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 1,
+                        amount: selectedChore.easy,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.easy}
+                    </option>
+                  )}
+                  {selectedChore.med && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 2,
+                        amount: selectedChore.med,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.med}
+                    </option>
+                  )}
+                  {selectedChore.hard && (
+                    <option
+                      value={JSON.stringify({
+                        pt: 3,
+                        amount: selectedChore.hard,
+                      })}
+                    >
+                      {selectedChore.item} {selectedChore.hard}
+                    </option>
+                  )}
+                </select>
+                {selectedChore && intensity && (
+                  <button onClick={handleAddTodo} className="btn btn-sm ml-8">
+                    Add
+                  </button>
                 )}
               </>
             )}
@@ -196,7 +213,7 @@ export default function Home() {
             <input
               type="checkbox"
               onClick={() => handleDeleteTodo(t)}
-              className="checkbox"   
+              className="checkbox"
             />
           </label>
         );
