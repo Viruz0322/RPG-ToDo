@@ -12,7 +12,7 @@ export default function SideBar() {
         <ul className="sideNavList">
           {navBarData.map((val, key) => {
             return (
-              <Link
+              <div
                 to={val.link}
                 key={key}
                 className="row"
@@ -21,7 +21,7 @@ export default function SideBar() {
               >
                 <div id="icon">{val.icon}</div>
                 <div id="title">{val.title}</div>
-              </Link>
+              </div>
             );
           })}
         </ul>
