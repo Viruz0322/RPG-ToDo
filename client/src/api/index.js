@@ -38,14 +38,17 @@ export function logout() {
   removeToken();
 }
 
-export const addChore = async (todo) => {
+export const addChore = async (todo, user) => {
   try {
     const res = await fetch("/api/chore", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(todo),
+      body: JSON.stringify({
+        todo,
+        user
+      }),
     });
     const data = await res.json();
     if (data.success) {
