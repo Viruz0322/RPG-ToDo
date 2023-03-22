@@ -1,113 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .App {
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
 }
 
 main {
-    background-image: url(./assets/pxfuel.jpg);
-    background-color: #cccccc; 
-    height: 500px; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
+  height: 500px;
 }
 
+#fill {
+  width: calc(100vw - 20%); /* Subtract the width of the sidebar */
+  height: 100vh;
+  background-image: url(./assets/pxfuel.jpg);
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .sideNavList {
-    height: 100vh;
-    width: 100%;
-    padding: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
 }
 
 .sideNavList .row {
-    height: 70px;
-    width: 100%;
-    border: 3px solid rgb(91, 91, 91);
-    list-style-type: none;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    font-family: 'VT323', monospace;
-    background: white;
+  height: 70px;
+  width: 100%;
+  border: 3px solid rgb(91, 91, 91);
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-family: "VT323", monospace;
+  background: white;
 }
 
-.sideNavList .row:hover{
-    cursor: pointer;
-    background-color: rgb(91, 91, 91);
-    color: white;;
+.sideNavList .row:hover {
+  cursor: pointer;
+  background-color: rgb(91, 91, 91);
+  color: white;
 }
 
 .row #icon {
-    flex: 25%;
-    display: grid;
-    place-items: center;
+  flex: 25%;
+  display: grid;
+  place-items: center;
 }
 
 .row #title {
-    flex: 30%;
-    font-size: 35px;
+  flex: 30%;
+  font-size: 35px;
 }
-
 
 /*WARRIOR */
 .sideNavList #Warrior {
-    background-color: #BA4F34;
-    color: #F5E05A;
-    border: 3px solid #7A184C;
+  background-color: #ba4f34;
+  color: #f5e05a;
+  border: 3px solid #7a184c;
 }
 
 .sideNavList #Warrior #icon {
-    color: #DB873D;
+  color: #db873d;
 }
 
 .sideNavList #Warrior:hover {
-    background-color: #7A184C;
+  background-color: #7a184c;
 }
 
 /*Healer */
 .sideNavList #Healer {
-    background-color: #286875 ;
-    color: #9AE643 ;
-    border: 3px solid #2e3762
+  background-color: #286875;
+  color: #9ae643;
+  border: 3px solid #2e3762;
 }
 
 .sideNavList #Healer #icon {
-    color: #2b9268;
+  color: #2b9268;
 }
 
 .sideNavList #Healer:hover {
-    background-color: #2e3762;
+  background-color: #2e3762;
 }
 
 /*Scholar*/
 .sideNavList #Scholar {
-    background-color: #3E6294;
-    color: #79EAF2;
-    border: 3px solid #3F3966
+  background-color: #3e6294;
+  color: #79eaf2;
+  border: 3px solid #3f3966;
 }
 
 .sideNavList #Scholar #icon {
-    color: #517ebd;
+  color: #517ebd;
 }
 
 .sideNavList #Scholar:hover {
-    background-color: #3F3966;
+  background-color: #3f3966;
 }
-
-
-
-
- 
