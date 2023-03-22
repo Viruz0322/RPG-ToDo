@@ -123,10 +123,10 @@ export default function Home() {
         {addCustom ? (
           <>
             <h1>or Create your own:</h1>
-            <div className="form-control w-full max-w-xs ml-3 mr-3">
-              <label className="label">
+            <div className="form-control w-full max-w-xs ml-3 mr-3 h-10">
+              {/* <label className="label">
                 <span className="label-text">What is the task name?</span>
-              </label>
+              </label> */}
               <input
                 type="text"
                 placeholder="Type here"
@@ -134,7 +134,7 @@ export default function Home() {
                 onChange={(e) => setCustomTaskName(e.target.value)}
               />
             </div>
-            <h1>Difficulty:</h1>
+            <h1 className="mr-3">Difficulty:</h1>
             <select
               value={diff}
               onChange={(e) => {
