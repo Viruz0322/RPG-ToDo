@@ -222,11 +222,7 @@ export default function Home() {
           </>
         )}
       </div>
-      <div className="progressMap">
-      {testData.map((item, idx) => (
-        <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.percentage} />
-      ))}
-    </div>
+
       {/* this section shows actual todos */}
       {/* TODO - style this ! */}
       {todos.map((t) => {
