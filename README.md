@@ -28,8 +28,11 @@ A user will arrive at the site and be prompted to create a profile. After loging
 ## Credits
 
 -Francisco Perez Perez (https://github.com/Viruz0322)
+
 -Nathan Nguyen (https://github.com/Viruz0322)
+
 -Armaan Zabihi (https://github.com/ArmaanZabihi)
+
 -Kaz Nyborg-Andersen (https://github.com/kaznyborg)
 
 ## License
