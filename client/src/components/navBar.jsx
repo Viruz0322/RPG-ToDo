@@ -1,6 +1,6 @@
 import "../main.css";
 import { navBarData } from "./navBarData";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useSetAtom } from "jotai";
 import { classAtom } from "../state";
 
