@@ -21,9 +21,9 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 A user will arrive at the site and be prompted to create a profile. After loging in, the user will be able to add tasks to their TO-Do list. In order to add a task the user will have to select a class, the classes are categories that the pregenerated tasks have been sorted into. then using the drop down menu a user can select the task they want. They will then be asked what difficulty level they want for that task. then the task is added. After that point, a user will go throughout their day and when they complete a task they will log in and check off that they completed the task and be rewarded with the points associated with that task and difficulty. 
 
-![Home Page](.\client\src\assets\home.png)
-![Login Screen](.\client\src\assets\login.png)
-![Task List](.\client\src\assets\task.png)
+![Home Page](./client\src/assets/home.png)
+![Login Screen](./client/src/assets/login.png)
+![Task List](./client/src/assets/task.png)
 
 ## Credits
 
