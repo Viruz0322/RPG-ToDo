@@ -148,14 +148,14 @@ export default function Home() {
             </select>
             <button
               onClick={handleAddCustomTask}
-              className="border-2 border-transparent rounded-md p-1 bg-teal-200 ml-3"
+              className="border-2 border-transparent rounded-md py-2 px-4 bg-blue-600 text-white ml-3"
             >
               Add Custom Task
             </button>
           </>
         ) : (
           <>
-            <h1>Start by selecting a class</h1>
+            <h1>Start by selecting a task</h1>
             <select
               value={selectedChore ? JSON.stringify(selectedChore) : ""}
               onChange={(e) => {
@@ -175,7 +175,7 @@ export default function Home() {
             </select>
             {selectedChore && (
               <>
-                <h1>Select Intensity</h1>
+                <h1 className="pr-2">Select Intensity</h1>
                 <select
                   value={intensity ? JSON.stringify(intensity) : ""}
                   onChange={(e) => setIntensity(JSON.parse(e.target.value))}
@@ -213,9 +213,9 @@ export default function Home() {
                   )}
                 </select>
                 {selectedChore && intensity && (
-                  <button onClick={handleAddTodo} className="btn btn-sm ml-8">
-                    Add
-                  </button>
+                  <button onClick={handleAddTodo} className="btn-sm py-2 px-4 bg-blue-600 text-white rounded ml-3">
+                  Add
+                </button>
                 )}
               </>
             )}
@@ -244,7 +244,7 @@ export default function Home() {
       {/* BUTTON FOR ADDING CUSTOM */}
       <button
         onClick={() => setAddCustom((c) => !c)}
-        className="btn btn-circle btn-outline fixed bottom-4 right-4 shadow-lg"
+        className="btn btn-circle btn-outline fixed bottom-4 right-4 shadow-lg bg-white"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
