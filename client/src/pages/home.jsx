@@ -3,6 +3,11 @@ import { useAtomValue } from "jotai";
 import { classAtom } from "../state";
 import { activities } from "../constants";
 import { addChore, getAllChores } from "../api";
+import ProgressBar from "../components/progressBar";
+
+const testData = [
+  { bgcolor: "#6a1b9a", completed:percentage },
+];
 
 export default function Home() {
   const currentClass = useAtomValue(classAtom);
@@ -140,7 +145,11 @@ export default function Home() {
           </>
         )}
       </div>
-
+      <div className="progressMap">
+      {testData.map((item, idx) => (
+        <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.percentage} />
+      ))}
+    </div>
       {/* this section shows actual todos */}
       {/* TODO - style this ! */}
       {todos.map((t) => {
