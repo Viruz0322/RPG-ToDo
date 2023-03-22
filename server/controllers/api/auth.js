@@ -10,8 +10,10 @@ function generateSecretKey(length = 32) {
   return crypto.randomBytes(length).toString('hex');
 }
 
-const secretKey = generateSecretKey();
+const secretKey = "your-secret-key" || generateSecretKey();
 console.log('Secret key:', secretKey);
+
+
 
 
 
@@ -60,7 +62,7 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid username or password." });
     }
 
-    const token = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: "1h" });
+    const token = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: "1d" });
 
     res.json({ success: true, token });
   } catch (err) {
